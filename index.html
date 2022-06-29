@@ -5,17 +5,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,400;1,300&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <div class="backgrounds">
-        <div class="background background_game background_menu"></div>
-        <div class="background background_overlay background_menu"></div>
+        <div class="background background_menu background_name" id="scene">
+            <div class="background__layer background__layer_bg" data-depth="0.1">
+            </div>
+            <div class="background__layer" data-depth="0.6">
+                <img src="./img/coin.svg" class="coin coin_1" alt="">
+            </div>
+            <div class="background__layer" data-depth="0.7">
+                <img src="./img/coin.svg" class="coin coin_4" alt="">
+            </div>
+            <div class="background__layer" data-depth="0.2">
+                <img src="./img/bg_chip.png" class="coin coin_2" alt="">
+            </div>
+            <div class="background__layer" data-depth="0.3">
+                <img src="./img/bg_chip_2.png" class="coin coin_3" alt="">
+            </div>
+            <div class="background__layer" data-depth="0.3">
+                <img src="./img/bg_rolette.png" class="bg_rolette" alt="">
+            </div>
+        </div>
+        <div class="background background_gradient background_name"></div>
     </div>
     <div class="view view_license">
+        <div class="license-block">
+            <div class="license-text">
+                <h1>Privacy Policy</h1>
+                Lucky Roulette is a Free app. This SERVICE is provided at no cost and is intended for use as is.
+                This page is used to inform visitors regarding my policies with the collection, use, and disclosure of
+                Personal
+                Information if anyone decided to use my Service.
+                Privacy Policy for the EU and other country users of Lucky Roulette and our EU and other country
+                business
+                partners and suppliers.
+            </div>
 
-        licese
+            <img src="./img/btn_accept.svg" class="accept_btn" alt="Accept">
+        </div>
+    </div>
+    <div class="view view_name">
+        <form class="name-form name-content">
+            <h1>Enter Your Name</h1>
+            <input type="text" id="nameInp">
+            <img class="name-btn" src="./img/btn_ok.png" alt="">
+        </form>
+    </div>
+    <div class="view view_game">
+        <div class="menu-top-bar">
+            <div class="info-block">
+                <span class="info-block__title">You name</span>
+                <div class="info-block__value" id="nameValue">
+                    
+                </div>
+            </div>
+            <div class="info-block">
+            <span class="info-block__title">Balance</span>
+            <div class="info-block__value">
+                <img src="./img/coin.svg" alt="">
+                <span>19938</span>
+            </div>
+        </div>
+    </div>
+    <img src="./img/btn_play.png" class="btn-play" alt="Play">
     </div>
 
     <script src="./modules/modules.js"></script>

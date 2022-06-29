@@ -3,7 +3,11 @@ class Storage {
      * 
      * @param {*} structure - keys with default values 
      */
-    constructor(structure) {
+    constructor(structure, events) {
+        if (!events) {
+            events = {};
+        }
+        this.events = events;
         this.data = {};
         Object.keys(structure).forEach(key => {
             const storageValue = localStorage.getItem(`STORAGE__${key}`);
@@ -16,7 +20,9 @@ class Storage {
             } catch (e) {
                 this.set(key, structure[key]);
             }
-        })
+        });
+
+        Object.entries(events).forEach(([k, v]) => v(this.data[k]));
     }
 
     get(key) {
@@ -26,5 +32,8 @@ class Storage {
     set(key, value) {
         localStorage.setItem(`STORAGE__${key}`, JSON.stringify(value));
         this.data[key] = value;
+        if (this.events[key]) {
+            this.events[key](value);
+        }
     }
 }

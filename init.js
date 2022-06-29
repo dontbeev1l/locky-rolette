@@ -10,10 +10,12 @@
 const modulesLoader = new ModulesLoader();
 modulesLoader
     .loadModule('log')
+    .loadModule('parallax')
     .loadModule('background')
     .loadModule('view')
     .loadModule('storage')
     .loadModule('nicknames')
     .onload([
-        'license.view.js',
+        './background.js',
+        './views.js',
         './main.js']);
