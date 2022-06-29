@@ -1,0 +1,7 @@
+.range__input {
+    display: none;
+}
+
+.range__control {
+    user-select: none;
+}

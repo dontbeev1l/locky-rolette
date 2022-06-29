@@ -1,0 +1,13 @@
+.view {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.view_active {
+    pointer-events: all;
+}
