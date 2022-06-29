@@ -206,3 +206,36 @@ body {
     height: 20px;
     margin-right: 4px;
 }
+
+.background_rolette {
+    background: radial-gradient(61.4% 87.78% at 50% 12.22%, #4B8D14 0%, #1C3008 100%);
+
+}
+
+.rolette-bar {
+    position: fixed;
+    width: 100vw;
+    top: -60px;
+    transform: translateX(-50%);
+    left: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    transition: top 300ms ease;
+    background: linear-gradient(180deg, #944A27 0%, #8D4A25 45.1%, #55270D 100%);
+    padding: 10px 2vw;
+    box-sizing: border-box;
+    box-shadow: 0px -3px 4px 0px rgba(255, 255, 255, 0.18) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+
+}
+
+.view_active .rolette-bar {
+    top: 0px;
+}
+
+.home {
+    height: 40px;
+}

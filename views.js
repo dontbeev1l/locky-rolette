@@ -26,3 +26,12 @@ const gameView = new View('game',
 
     }
 );
+
+const roletteView = new View('rolette',
+    () => {
+        backgrounds.setActive('rolette');
+    },
+    () => {
+
+    }
+);

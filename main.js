@@ -8,8 +8,9 @@ const storage = new Storage(
         name: (value) => {
             nameValue.innerHTML = value;
         },
-        balance: () => {
-
+        balance: (value) => {
+            balanceValue1.innerHTML = value;
+            balanceValue2.innerHTML = value;
         }
     });
 
@@ -37,3 +38,4 @@ const submitName = (e) => {
 
 document.querySelector('.name-form').addEventListener('submit', submitName);
 document.querySelector('.name-btn').addEventListener('click', submitName);
+document.querySelector('.btn-play').addEventListener('click', () => viewController.setView(roletteView));
