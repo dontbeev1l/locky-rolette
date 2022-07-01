@@ -253,7 +253,7 @@ body {
     align-items: center;
     position: fixed;
     bottom: calc(-100% + 60px);
-    height: calc(100% - 60px);
+    height: calc(100% - 65px);
     left: 0px;
     transition: bottom 300ms ease;
     width: 100vw;
