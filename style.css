@@ -252,7 +252,7 @@ body {
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom: calc(-100% + 60px);
+    bottom: calc(-100%);
     height: calc(100% - 65px);
     left: 0px;
     transition: bottom 300ms ease;
