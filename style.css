@@ -6,9 +6,9 @@ body {
     user-select: none;
 }
 
-* {
+/* * {
     box-sizing: border-box;
-}
+} */
 
 .background__layer {
     position: fixed;
