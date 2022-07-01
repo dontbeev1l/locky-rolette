@@ -221,7 +221,7 @@ body {
 .rolette-bar {
     position: fixed;
     width: 100vw;
-    bottom: -60px;
+    top: -100%;
     transform: translateX(-50%);
     left: 50%;
     display: flex;
@@ -229,7 +229,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    transition: bottom 300ms ease;
+    transition: top 300ms ease;
     background: linear-gradient(180deg, #944A27 0%, #8D4A25 45.1%, #55270D 100%);
     padding: 10px 2vw;
     box-sizing: border-box;
@@ -237,7 +237,7 @@ body {
 }
 
 .view_active .rolette-bar {
-    bottom: calc(100vh - 60px);
+    top: 0px;
 }
 
 .home, .sound, .mute {
