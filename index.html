@@ -11,6 +11,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="./style.css">
+    <title>Lucky Rolette</title>
 </head>
 
 <body>
@@ -79,6 +80,8 @@
         <img src="./img/btn_play.png" class="btn-play" alt="Play">
     </div>
     <div class="view view_rolette">
+        <div class="chat">
+        </div>
         <div class="rolette-bar">
             <img src="./img/home.svg" class="home" alt="">
             <div class="info-block">
@@ -86,6 +89,78 @@
                 <div class="info-block__value">
                     <img src="./img/coin.svg" alt="">
                     <span id="balanceValue2">19938</span>
+                </div>
+            </div>
+            <div class="info-block">
+                <span class="info-block__title">Bet</span>
+                <div class="info-block__value">
+                    <img src="./img/coin.svg" alt="">
+                    <span id="betValue1"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="rolette-table">
+            <div class="rolette-wrapper">
+                <div class="rolette-container">
+                    <img class="rolette" src="./img/bg_rolette.png" alt="">
+                    <img class="rolette_с" src="./img/bg_rolette_с.png" alt="">
+                    <img class="ball" src="./img/ball.png" alt="">
+                </div>
+            </div>
+            <div class="rolette-table__numbers-section">
+                <div class="rolette-table__numbers-section-first-row">
+                    <div class="game-field">
+                        <div class="game-field__first-row">
+                            <div></div>
+                            <div class="zero number" data-bet="0">0</div>
+                            <div class="numbers">
+                            </div>
+                            <div class="b2to1">
+                                <div class="number" data-bet="2to1_1">2 to 1</div>
+                                <div class="number" data-bet="2to1_2">2 to 1</div>
+                                <div class="number" data-bet="2to1_3">2 to 1</div>
+                            </div>
+                        </div>
+                        <div class="game-field__second-row">
+                            <div></div>
+                            <div></div>
+                            <div class="n12">
+                                <div data-bet="12_1">1st 12</div>
+                                <div data-bet="12_2">2nd 12</div>
+                                <div data-bet="12_3">3rd 12</div>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="game-field__second-row">
+                            <div></div>
+                            <div></div>
+                            <div class="oddeven-bets">
+                                <div data-bet="1to18">1to18</div>
+                                <div data-bet="even">EVEN</div>
+                                <div data-bet="red">RED</div>
+                                <div data-bet="black">BLACK</div>
+                                <div data-bet="odd">ODD</div>
+                                <div data-bet="19to36">19to36</div>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <div class="bet-values">
+                        <div class="bet-value" data-bet-value="25"> <img src="./img/chip_25.png" alt=""> 25</div>
+                        <div class="bet-value" data-bet-value="10"><img src="./img/chip_10.png" alt="">10</div>
+                        <div class="bet-value" data-bet-value="5"><img src="./img/chip_5.png" alt="">5</div>
+                        <div class="bet-value" data-bet-value="1"><img src="./img/chip_1.png" alt="">1</div>
+                    </div>
+                </div>
+
+
+                <div class="actions">
+                    <img class="btn_undo" src="./img/btn_undo.png" alt="undo">
+                    <img class="btn_clear" src="./img/btn_clear.png" alt="">
+                    <img class="btn_double" src="./img/btn_double.png" alt="">
+                    <img class="btn_spin" src="./img/btn_spin.png" alt="">
                 </div>
             </div>
         </div>
