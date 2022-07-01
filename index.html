@@ -14,7 +14,7 @@
     <title>Lucky Rolette</title>
 </head>
 
-<body>
+<body class="vetical">
     <div class="backgrounds">
         <div class="background background_menu background_name" id="scene">
             <div class="background__layer background__layer_bg" data-depth="0.1">
@@ -83,7 +83,11 @@
         <div class="chat">
         </div>
         <div class="rolette-bar">
-            <img src="./img/home.svg" class="home" alt="">
+            <div class="controls">
+                <img src="./img/home.svg" class="home" alt="">
+                <img src="./img/sound.svg" class="sound" alt="">
+                <img src="./img/mute.svg" class="mute" alt="">
+            </div>
             <div class="info-block">
                 <span class="info-block__title">Balance</span>
                 <div class="info-block__value">
@@ -166,7 +170,7 @@
         </div>
 
     </div>
-
+<audio src="./music.mp3" id="song" loop="loop"></audio>
 
     <script src="./modules/modules.js"></script>
     <script src="./init.js"></script>

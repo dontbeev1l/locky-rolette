@@ -6,6 +6,10 @@ body {
     user-select: none;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .background__layer {
     position: fixed;
     width: 100vw;
@@ -139,6 +143,7 @@ body {
     font-family: 'Inria Serif', serif;
     color: #fff;
     margin: 20px 0;
+    font-size: 22px;
 }
 
 .name-content img {
@@ -235,8 +240,9 @@ body {
     bottom: calc(100vh - 60px);
 }
 
-.home {
+.home, .sound, .mute {
     height: 40px;
+    margin-right: 5px;
     cursor: pointer;
 }
 
@@ -374,8 +380,8 @@ body {
     border-right: 1px solid #fff;
 }
 
-.n12 div,
-.oddeven-bets div {
+.n12 > div,
+.oddeven-bets > div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -486,7 +492,11 @@ body {
     top: 11px;
 }
 
-.chips img:nth-of-type(6), .chips img:nth-of-type(7), .chips img:nth-of-type(8), .chips img:nth-of-type(9), .chips img:nth-of-type(n + 9) {
+.chips img:nth-of-type(6),
+.chips img:nth-of-type(7),
+.chips img:nth-of-type(8),
+.chips img:nth-of-type(9),
+.chips img:nth-of-type(n + 9) {
     top: 13px;
 }
 
@@ -527,13 +537,13 @@ body {
     z-index: 22;
     padding: 8px;
     max-width: 30vw;
-    border-radius:  0px 0px 8px 8px;
+    border-radius: 0px 0px 8px 8px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .5) 100%);
     max-height: 100px;
     box-sizing: border-box;
     overflow-y: scroll;
     font-style: italic;
-    transition: bottom 300ms ease;
+    transition: bottom 300ms ease, top 300ms ease;
 }
 
 .view_active .chat {
@@ -556,3 +566,68 @@ body {
 }
 
 
+.vetical .rolette-table {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.vetical .rolette-table__numbers-section {
+    flex-grow: unset;
+    /* height: 40vh; */
+}
+
+.vetical .rolette-wrapper {
+    height: 100%;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.vetical .rolette-table__numbers-section-first-row {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 8px;
+    justify-content: flex-end;
+    height: auto;
+}
+
+.vetical .bet-values {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.vetical .bet-value {
+    flex-grow: 1;
+    margin-top: 0px !important;
+}
+
+.vetical .view_active .rolette-table {
+    /* bottom: 60px; */
+}
+
+.vetical .view_active .chat {
+    bottom: auto;
+    top: 70px;
+    max-width: 60vw;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .5) 100%);
+}
+
+.vetical .license-text {
+    width: auto;
+    padding-bottom: 90px;
+}
+
+.vetical .accept_btn {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+audio {
+    display: none;
+}

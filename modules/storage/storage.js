@@ -11,7 +11,7 @@ class Storage {
         this.data = {};
         Object.keys(structure).forEach(key => {
             const storageValue = localStorage.getItem(`STORAGE__${key}`);
-            if (!storageValue) {
+            if (!storageValue && storageValue !== false) {
                 this.set(key, structure[key]);
                 return;
             }

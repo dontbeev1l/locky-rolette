@@ -3,12 +3,15 @@
 let activeBet = 1;
 const ROLETTE_VALUES = [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 32, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26];
 let spinActive = false;
+let vertical = true;
+
 
 const viewController = new ViewController(licenseView);
 const storage = new Storage(
     {
         name: '',
-        balance: 5000
+        balance: 5000,
+        music: true
     },
     {
         name: (value) => {
@@ -51,7 +54,7 @@ const chat = new Chat();
 const submitName = (e) => {
     e.stopPropagation();
     e.preventDefault();
-
+    nameInp.blur();
     if (!nameInp.value) {
         return;
     }
@@ -62,7 +65,19 @@ const submitName = (e) => {
 
 document.querySelector('.name-form').addEventListener('submit', submitName);
 document.querySelector('.name-btn').addEventListener('click', submitName);
-document.querySelector('.btn-play').addEventListener('click', () => viewController.setView(roletteView));
+document.querySelector('.btn-play').addEventListener('click', () => {
+    if (storage.get('music')) {
+        song.play();
+
+        document.querySelector('.sound').style.display = 'none';
+        document.querySelector('.mute').style.display = 'inline-block';
+    } else {
+        song.pause();
+        document.querySelector('.mute').style.display = 'none';
+        document.querySelector('.sound').style.display = 'inline-block';
+    }
+    viewController.setView(roletteView)
+});
 
 document.querySelector('.home').addEventListener('click', () => viewController.setView(gameView));
 
@@ -358,6 +373,10 @@ const scaleRolette = () => {
     requestAnimationFrame(scaleRolette);
     const wrapper = document.querySelector('.rolette-wrapper');
     const rolette = document.querySelector('.rolette');
+    if (vertical) {
+        // rolette.style.width = ``;
+        // return;
+    }
 
     rolette.style.width = `${Math.min(wrapper.clientWidth, wrapper.clientHeight) * 0.92}px`
 }
@@ -367,10 +386,40 @@ scaleRolette();
 
 const nicknames = new Nicknmes();
 
-const fakeBet = () =>{
+const fakeBet = () => {
     setTimeout(fakeBet, Math.round(Math.random() * 10000) + 20000);
     const r = Math.round(Math.random() * 36);
     chat.sendMessage(Nicknmes.getRandom(nicknames), `Bet ${Math.round(Math.random() * 500 + 1)} to ${r} (${getColor(r)})`);
 }
 
 fakeBet();
+
+
+const checkVertical = () => {
+    requestAnimationFrame(checkVertical);
+    const view = document.querySelector('.view');
+    vertical = view.clientWidth < view.clientHeight;
+
+    if (vertical) {
+        document.body.classList.add('vetical')
+    } else {
+        document.body.classList.remove('vetical')
+    }
+}
+
+
+checkVertical();
+
+document.querySelector('.sound').onclick = () => {
+    document.querySelector('.sound').style.display = 'none';
+    document.querySelector('.mute').style.display = 'inline-block';
+    storage.set('music', true);
+    song.play();
+}
+
+document.querySelector('.mute').onclick = () => {
+    document.querySelector('.sound').style.display = 'inline-block';
+    storage.set('music', false);
+    document.querySelector('.mute').style.display = 'none';
+    song.pause();
+}
